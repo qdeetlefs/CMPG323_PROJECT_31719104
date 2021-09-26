@@ -3,6 +3,7 @@ package za.ac.nwu.ac.translator.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import za.ac.nwu.ac.domain.dto.AccountTypeDto;
+import za.ac.nwu.ac.domain.persistence.AccountTransaction;
 import za.ac.nwu.ac.domain.persistence.AccountType;
 import za.ac.nwu.ac.repo.persistence.AccountTypeRepository;
 import za.ac.nwu.ac.translator.AccountTypeTranslator;
@@ -35,5 +36,26 @@ public class AccountTypeTranslatorImpl implements AccountTypeTranslator {
 
         return accountTypeDtos;
 
+    }
+
+    @Override
+    public AccountTypeDto create(AccountTypeDto accountTypeDto) {
+        try {
+            AccountType accountType = accountTypeRepository.save(accountTypeDto.getAccountType());
+            return new AccountTypeDto(accountType);
+        } catch (Exception e) {
+            throw new RuntimeException("Unable to save to the DB", e);
+        }
+    }
+
+    @Override
+    public AccountTypeDto getAccountTypeByMnemonic(String mnemonic) {
+        try {
+            AccountType accountType = accountTypeRepository.getAccountTypeByMnemonic(mnemonic);
+            return new AccountTypeDto(accountType);
+        } catch (Exception e)
+        {
+            throw new RuntimeException("Unable to read from the database",e);
+        }
     }
 }
