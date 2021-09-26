@@ -1,4 +1,6 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Fri Sep 03 17:33:49 CAT 2021
+#Sun Sep 26 20:22:07 CAT 2021
 junit-4.12.jar>central=
 junit-4.12.pom>central=
+junit-4.12-javadoc.jar>central=
+junit-4.12-sources.jar>central=

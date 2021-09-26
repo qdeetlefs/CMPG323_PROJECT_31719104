@@ -28,9 +28,11 @@ public class AccountTransaction implements Serializable {
         this.transactionDate = transactionDate;
     }
 
+
+//    @SequenceGenerator(name = "CMPG323_ACCOUNTSYSTEM_GENERIC_SEQ", sequenceName = "cmpg323_accountsystem.CMPG323_ACCOUNTSYSTEM_GENERIC_SEQ", allocationSize = 1)
+//    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CMPG323_ACCOUNTSYSTEM_GENERIC_SEQ")
     @Id
-    @SequenceGenerator(name = "CMPG323_ACCOUNTSYSTEM_GENERIC_SEQ", sequenceName = "cmpg323_accountsystem.CMPG323_ACCOUNTSYSTEM_GENERIC_SEQ", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CMPG323_ACCOUNTSYSTEM_GENERIC_SEQ")
+    @GeneratedValue(strategy = javax.persistence.GenerationType.IDENTITY )
     @Column(name = "ACCOUNT_TX_ID")
     public long getTransactionId() {
         return transactionId;

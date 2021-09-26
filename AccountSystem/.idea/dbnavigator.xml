@@ -42,7 +42,7 @@
     <connection id="f12fc49f-86ff-4afd-b041-15f1a9f17856" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
-    <filter-actions connection-id="f12fc49f-86ff-4afd-b041-15f1a9f17856" dataset="cmpg323_accountsystem.account_type" active-filter-id="" />
+    <filter-actions connection-id="f12fc49f-86ff-4afd-b041-15f1a9f17856" dataset="cmpg323_accountsystem.account_type" active-filter-id="EMPTY_FILTER" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
@@ -83,7 +83,7 @@
           <url-type value="DATABASE" />
           <host value="localhost" />
           <port value="3306" />
-          <database value="mysql" />
+          <database value="cmpg323_accountsystem" />
           <type value="USER_PASSWORD" />
           <user value="qdeet" />
           <deprecated-pwd value="MDAwOTE4NTE4OTA4MkBOd3U=" />

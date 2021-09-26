@@ -1,0 +1,6 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sun Sep 26 21:00:05 CAT 2021
+asm-5.0.4.jar>central=
+asm-5.0.4-javadoc.jar>central=
+asm-5.0.4.pom>central=
+asm-5.0.4-sources.jar>central=
