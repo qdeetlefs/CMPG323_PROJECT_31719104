@@ -81,7 +81,7 @@ public class AccountTypeController {
             @PathVariable("mnemonic") final String mnemonic) {
         AccountTypeDto accountType = fetchAccountTypeFlow.getAccountTypeByMnemonic(mnemonic);
         GeneralResponse<AccountTypeDto> response = new GeneralResponse<>(true, accountType);
-        return new ResponseEntity<>(response, HttpStatus.CREATED);
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
     @DeleteMapping("{mnemonic}")
@@ -99,7 +99,7 @@ public class AccountTypeController {
             @PathVariable("mnemonic") final String mnemonic) {
         AccountTypeDto accountType = modifyAccountTypeFlow.deleteAccountType(mnemonic);
         GeneralResponse<AccountTypeDto> response = new GeneralResponse<>(true, accountType);
-        return new ResponseEntity<>(response, HttpStatus.CREATED);
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
     @PutMapping("{mnemonic}")
@@ -127,9 +127,11 @@ public class AccountTypeController {
             @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
                     LocalDate newCreationDate
     ){
-        AccountTypeDto accountType = modifyAccountTypeFlow.deleteAccountType(mnemonic);
+        AccountTypeDto accountType = modifyAccountTypeFlow.updateAccountType(mnemonic, newAccountTypeName, newCreationDate);
+
         GeneralResponse<AccountTypeDto> response = new GeneralResponse<>(true, accountType);
-        return new ResponseEntity<>(response, HttpStatus.CREATED);
+
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
 

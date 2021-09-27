@@ -7,5 +7,5 @@ import java.time.LocalDate;
 public interface ModifyAccountTypeFlow {
     AccountTypeDto deleteAccountType(String mnemonic);
 
-    Object updateAccountType(String anyString, String anyString1, LocalDate any);
+    AccountTypeDto updateAccountType(String mnemonic, String newAccountType_Name, LocalDate newCreationDate);
 }

@@ -6,6 +6,7 @@ import java.util.Objects;
 public class GeneralResponse<T> implements Serializable {
 
     private static final long serialVersionUID = -6511059914485318226L;
+
     private final boolean successful;
     private final transient T payload;
 
@@ -33,8 +34,8 @@ public class GeneralResponse<T> implements Serializable {
     @Override
     public String toString() {
         return "GeneralResponse{" +
-                "successful=" + successful +
-                ",payload=" + payload +
-                "}";
+                " successful= " + successful +
+                ", payload=" + payload +
+                '}';
     }
 }

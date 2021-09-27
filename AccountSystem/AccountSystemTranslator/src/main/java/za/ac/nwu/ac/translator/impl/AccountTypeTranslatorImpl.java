@@ -8,6 +8,7 @@ import za.ac.nwu.ac.domain.persistence.AccountType;
 import za.ac.nwu.ac.repo.persistence.AccountTypeRepository;
 import za.ac.nwu.ac.translator.AccountTypeTranslator;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +18,7 @@ public class AccountTypeTranslatorImpl implements AccountTypeTranslator {
     private final AccountTypeRepository accountTypeRepository;
 
     @Autowired
-    public AccountTypeTranslatorImpl(AccountTypeRepository accountTypeRepository) {
+    public AccountTypeTranslatorImpl(@SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection") AccountTypeRepository accountTypeRepository) {
         this.accountTypeRepository = accountTypeRepository;
     }
 
@@ -41,7 +42,7 @@ public class AccountTypeTranslatorImpl implements AccountTypeTranslator {
     @Override
     public AccountTypeDto create(AccountTypeDto accountTypeDto) {
         try {
-            AccountType accountType = accountTypeRepository.save(accountTypeDto.getAccountType());
+            AccountType accountType = accountTypeRepository.save(accountTypeDto.getAccountType()); //faulty
             return new AccountTypeDto(accountType);
         } catch (Exception e) {
             throw new RuntimeException("Unable to save to the DB", e);
@@ -56,6 +57,28 @@ public class AccountTypeTranslatorImpl implements AccountTypeTranslator {
         } catch (Exception e)
         {
             throw new RuntimeException("Unable to read from the database",e);
+        }
+    }
+
+    @Override
+    public AccountTypeDto deleteAccountType(String mnemonic) {
+        try {
+            AccountType accountType = accountTypeRepository.deleteAccountType(mnemonic);
+            return new AccountTypeDto(accountType);
+        } catch (Exception e)
+        {
+            throw new RuntimeException("Unable to delete from the database",e);
+        }
+    }
+
+    @Override
+    public AccountTypeDto updateAccountType(String mnemonic, String newAccountType_name, LocalDate newCreationDate) {
+        try {
+            AccountType accountType = accountTypeRepository.updateAccountType(mnemonic, newAccountType_name, newCreationDate);
+            return new AccountTypeDto(accountType);
+        } catch (Exception e)
+        {
+            throw new RuntimeException("Unable to update row from the database",e);
         }
     }
 }

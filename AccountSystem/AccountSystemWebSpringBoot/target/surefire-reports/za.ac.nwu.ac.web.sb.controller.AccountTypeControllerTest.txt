@@ -1,24 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: za.ac.nwu.ac.web.sb.controller.AccountTypeControllerTest
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 3, Errors: 2, Skipped: 0, Time elapsed: 1.08 s <<< FAILURE! - in za.ac.nwu.ac.web.sb.controller.AccountTypeControllerTest
-create(za.ac.nwu.ac.web.sb.controller.AccountTypeControllerTest)  Time elapsed: 0.549 s  <<< ERROR!
-java.time.format.DateTimeParseException: Text '2020 - 01 - 01' could not be parsed at index 4
-	at za.ac.nwu.ac.web.sb.controller.AccountTypeControllerTest.create(AccountTypeControllerTest.java:99)
-
-getAll(za.ac.nwu.ac.web.sb.controller.AccountTypeControllerTest)  Time elapsed: 0.105 s  <<< FAILURE!
-org.junit.ComparisonFailure: expected:<{"[successful":true,"]payload":[{"mnemonic...> but was:<{"[]payload":[{"mnemonic...>
-	at za.ac.nwu.ac.web.sb.controller.AccountTypeControllerTest.getAll(AccountTypeControllerTest.java:88)
-
-updateAccountType(za.ac.nwu.ac.web.sb.controller.AccountTypeControllerTest)  Time elapsed: 0.021 s  <<< FAILURE!
-java.lang.AssertionError: Status expected:<200> but was:<201>
-	at za.ac.nwu.ac.web.sb.controller.AccountTypeControllerTest.updateAccountType(AccountTypeControllerTest.java:152)
-
-updateAccountTypeWithNoOptionalDate(za.ac.nwu.ac.web.sb.controller.AccountTypeControllerTest)  Time elapsed: 0.021 s  <<< FAILURE!
-java.lang.AssertionError: Status expected:<200> but was:<201>
-	at za.ac.nwu.ac.web.sb.controller.AccountTypeControllerTest.updateAccountTypeWithNoOptionalDate(AccountTypeControllerTest.java:175)
-
-deleteAccountType(za.ac.nwu.ac.web.sb.controller.AccountTypeControllerTest)  Time elapsed: 0.017 s  <<< ERROR!
-java.time.format.DateTimeParseException: Text '2021 - 04 - 01' could not be parsed at index 4
-	at za.ac.nwu.ac.web.sb.controller.AccountTypeControllerTest.deleteAccountType(AccountTypeControllerTest.java:121)
-
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 6, Time elapsed: 0.064 s - in za.ac.nwu.ac.web.sb.controller.AccountTypeControllerTest

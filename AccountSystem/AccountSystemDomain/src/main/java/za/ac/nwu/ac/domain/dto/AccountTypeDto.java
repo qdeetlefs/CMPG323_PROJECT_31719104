@@ -10,6 +10,7 @@ import java.util.Objects;
 
 @ApiModel(value = "AccountType", description = "A DTO that represents the AccountType")
 public class AccountTypeDto implements Serializable {
+
     private static final long serialVersionUID = -7731154715176897719L;
 
     private String mnemonic;

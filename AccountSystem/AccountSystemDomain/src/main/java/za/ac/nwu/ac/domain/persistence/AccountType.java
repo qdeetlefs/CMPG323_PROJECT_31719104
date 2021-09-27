@@ -38,7 +38,7 @@ public class AccountType implements Serializable {
 //    @SequenceGenerator(name = "CMPG323_ACCOUNTSYSTEM_GENERIC_SEQ", sequenceName = "cmpg323_accountsystem.account_type", allocationSize = 1)
 //    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CMPG323_ACCOUNTSYSTEM_GENERIC_SEQ")
     @Id
-    @GeneratedValue(strategy = javax.persistence.GenerationType.IDENTITY )
+    @GeneratedValue(strategy = GenerationType.IDENTITY )
     @Column(name = "ACCOUNT_TYPE_ID")
     public Long getAccountTypeId() {
         return accountTypeId;
@@ -75,7 +75,7 @@ public class AccountType implements Serializable {
         this.creationDate = creationDate;
     }
 
-    @OneToMany(targetEntity = AccountTransaction.class, fetch = FetchType.LAZY, mappedBy = "accountType", orphanRemoval = true, cascade = CascadeType.PERSIST)
+    @OneToMany(targetEntity = AccountTransaction.class, fetch = FetchType.LAZY, mappedBy = "accountType")
     public Set<AccountTransaction> getAccountTransactions() {
         return accountTransactions;
     }
