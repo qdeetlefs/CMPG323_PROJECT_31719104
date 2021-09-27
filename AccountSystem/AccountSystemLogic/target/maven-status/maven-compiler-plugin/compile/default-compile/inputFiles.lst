@@ -1,6 +1,8 @@
 D:\Documents\CMPG323_PROJECT\AccountSystem\AccountSystemLogic\src\main\java\za\ac\nwu\ac\logic\flow\impl\Modulo.java
 D:\Documents\CMPG323_PROJECT\AccountSystem\AccountSystemLogic\src\main\java\za\ac\nwu\ac\logic\flow\impl\FetchAccountTypeFlowImpl.java
+D:\Documents\CMPG323_PROJECT\AccountSystem\AccountSystemLogic\src\main\java\za\ac\nwu\ac\logic\flow\ModifyAccountTypeFlow.java
 D:\Documents\CMPG323_PROJECT\AccountSystem\AccountSystemLogic\src\main\java\za\ac\nwu\ac\logic\config\LogicConfig.java
+D:\Documents\CMPG323_PROJECT\AccountSystem\AccountSystemLogic\src\main\java\za\ac\nwu\ac\logic\flow\impl\ModifyAccountTypeFlowImpl.java
 D:\Documents\CMPG323_PROJECT\AccountSystem\AccountSystemLogic\src\main\java\za\ac\nwu\ac\logic\flow\CreateAccountTypeFlow.java
 D:\Documents\CMPG323_PROJECT\AccountSystem\AccountSystemLogic\src\main\java\za\ac\nwu\ac\logic\flow\FetchAccountTypeFlow.java
 D:\Documents\CMPG323_PROJECT\AccountSystem\AccountSystemLogic\src\main\java\za\ac\nwu\ac\logic\flow\impl\CreateAccountTypeFlowImpl.java

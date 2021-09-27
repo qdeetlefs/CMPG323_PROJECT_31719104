@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Mon Sep 27 12:24:25 CAT 2021
+pax-swissbox-core-1.8.2.jar>central=
+pax-swissbox-core-1.8.2.pom>central=
+pax-swissbox-core-1.8.2-javadoc.jar>central=

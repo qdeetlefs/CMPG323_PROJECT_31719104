@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Mon Sep 27 12:24:14 CAT 2021
+commons-fileupload-1.0-javadoc.jar>central=
+commons-fileupload-1.0.pom>central=
+commons-fileupload-1.0.jar>central=

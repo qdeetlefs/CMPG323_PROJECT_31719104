@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Mon Sep 27 12:24:23 CAT 2021
+ops4j-base-store-1.5.0-javadoc.jar>central=
+ops4j-base-store-1.5.0.jar>central=
+ops4j-base-store-1.5.0.pom>central=

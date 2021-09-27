@@ -1,4 +1,5 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Fri Sep 03 17:35:53 CAT 2021
-aether-api-1.0.2.v20150114.jar>central=
+#Mon Sep 27 12:24:29 CAT 2021
 aether-api-1.0.2.v20150114.pom>central=
+aether-api-1.0.2.v20150114.jar>central=
+aether-api-1.0.2.v20150114-javadoc.jar>central=

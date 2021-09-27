@@ -1,4 +1,5 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Fri Sep 03 17:56:24 CAT 2021
+#Mon Sep 27 12:24:13 CAT 2021
 icu4j-58.1.jar>central=
 icu4j-58.1.pom>central=
+icu4j-58.1-javadoc.jar>central=

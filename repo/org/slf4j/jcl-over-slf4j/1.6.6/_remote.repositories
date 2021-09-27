@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Mon Sep 27 12:24:17 CAT 2021
+jcl-over-slf4j-1.6.6-javadoc.jar>central=
+jcl-over-slf4j-1.6.6.jar>central=
+jcl-over-slf4j-1.6.6.pom>central=

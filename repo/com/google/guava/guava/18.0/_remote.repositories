@@ -1,3 +1,4 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Fri Sep 03 17:35:17 CAT 2021
+#Mon Sep 27 12:25:28 CAT 2021
 guava-18.0.pom>central=
+guava-18.0.jar>central=
