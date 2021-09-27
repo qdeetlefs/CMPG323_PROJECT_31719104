@@ -3,7 +3,6 @@ package za.ac.nwu.ac.translator.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import za.ac.nwu.ac.domain.dto.AccountTypeDto;
-import za.ac.nwu.ac.domain.persistence.AccountTransaction;
 import za.ac.nwu.ac.domain.persistence.AccountType;
 import za.ac.nwu.ac.repo.persistence.AccountTypeRepository;
 import za.ac.nwu.ac.translator.AccountTypeTranslator;
@@ -61,10 +60,9 @@ public class AccountTypeTranslatorImpl implements AccountTypeTranslator {
     }
 
     @Override
-    public AccountTypeDto deleteAccountType(String mnemonic) {
+    public void deleteAccountType(String mnemonic) {
         try {
-            AccountType accountType = accountTypeRepository.deleteAccountType(mnemonic);
-            return new AccountTypeDto(accountType);
+            accountTypeRepository.deleteAccountType(mnemonic);
         } catch (Exception e)
         {
             throw new RuntimeException("Unable to delete from the database",e);
@@ -72,10 +70,9 @@ public class AccountTypeTranslatorImpl implements AccountTypeTranslator {
     }
 
     @Override
-    public AccountTypeDto updateAccountType(String mnemonic, String newAccountType_name, LocalDate newCreationDate) {
+    public void updateAccountType(String mnemonic, String newAccountType_name, LocalDate newCreationDate) {
         try {
-            AccountType accountType = accountTypeRepository.updateAccountType(mnemonic, newAccountType_name, newCreationDate);
-            return new AccountTypeDto(accountType);
+            accountTypeRepository.updateAccountType(mnemonic, newAccountType_name, newCreationDate);
         } catch (Exception e)
         {
             throw new RuntimeException("Unable to update row from the database",e);

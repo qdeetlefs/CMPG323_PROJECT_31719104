@@ -2,7 +2,6 @@ package za.ac.nwu.ac.logic.flow.impl;
 
 import org.springframework.stereotype.Component;
 import za.ac.nwu.ac.domain.dto.AccountTypeDto;
-import za.ac.nwu.ac.logic.flow.FetchAccountTypeFlow;
 import za.ac.nwu.ac.logic.flow.ModifyAccountTypeFlow;
 import za.ac.nwu.ac.translator.AccountTypeTranslator;
 
@@ -21,11 +20,16 @@ public class ModifyAccountTypeFlowImpl implements ModifyAccountTypeFlow {
 
     @Override
     public AccountTypeDto deleteAccountType(String mnemonic) {
-        return accountTypeTranslator.deleteAccountType(mnemonic);
+        accountTypeTranslator.deleteAccountType(mnemonic);
+        return new AccountTypeDto("DELETED","Deleted",null);
     }
 
     @Override
     public AccountTypeDto updateAccountType(String mnemonic, String newAccountType_Name, LocalDate newCreationDate) {
-        return accountTypeTranslator.updateAccountType(mnemonic, newAccountType_Name, newCreationDate);
+        if (null == newCreationDate) {
+            newCreationDate = LocalDate.now();
+        }
+        accountTypeTranslator.updateAccountType(mnemonic, newAccountType_Name, newCreationDate);
+        return new AccountTypeDto(mnemonic,newAccountType_Name,newCreationDate);
     }
 }
