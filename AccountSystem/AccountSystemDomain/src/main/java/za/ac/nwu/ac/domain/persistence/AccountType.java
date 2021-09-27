@@ -29,13 +29,17 @@ public class AccountType implements Serializable {
 
 
     public AccountType(String mnemonic, String accountTypeName, LocalDate creationDate) {
+        this.mnemonic = mnemonic;
+        this.accountTypeName = accountTypeName;
+        this.creationDate = creationDate;
     }
 
     public AccountType() {
+
     }
 
 
-//    @SequenceGenerator(name = "CMPG323_ACCOUNTSYSTEM_GENERIC_SEQ", sequenceName = "cmpg323_accountsystem.account_type", allocationSize = 1)
+    //    @SequenceGenerator(name = "CMPG323_ACCOUNTSYSTEM_GENERIC_SEQ", sequenceName = "cmpg323_accountsystem.account_type", allocationSize = 1)
 //    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CMPG323_ACCOUNTSYSTEM_GENERIC_SEQ")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY )

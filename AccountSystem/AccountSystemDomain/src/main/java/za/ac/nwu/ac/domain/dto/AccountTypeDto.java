@@ -17,6 +17,7 @@ public class AccountTypeDto implements Serializable {
     private String accountTypeName;
     private LocalDate creationDate;
 
+
     public AccountTypeDto() {
     }
 
@@ -34,7 +35,7 @@ public class AccountTypeDto implements Serializable {
 
     @ApiModelProperty(position = 1,
     value = "AccountType Mnemonic",
-    name = "Mnemonic",
+    name = "MNEMONIC",
     notes = "Uniquely identifies the account type",
     dataType = "java.lang.String",
     example = "MILES",
@@ -49,7 +50,7 @@ public class AccountTypeDto implements Serializable {
 
     @ApiModelProperty(position = 2,
             value = "AccountType Name",
-            name = "Name",
+            name = "ACCOUNT_TYPE_NAME",
             notes = "The name of the account type",
             dataType = "java.lang.String",
             example = "Miles",
@@ -62,7 +63,7 @@ public class AccountTypeDto implements Serializable {
 
     @ApiModelProperty(position = 3,
             value = "AccountType Creation Date",
-            name = "CreationDate",
+            name = "CREATION_DATE",
             notes = "This is the date on which the AccountType was created",
             dataType = "java.lang.String",
             example = "2020-01-01",
@@ -75,17 +76,18 @@ public class AccountTypeDto implements Serializable {
         this.creationDate = creationDate;
     }
 
+
+    @JsonIgnore
+    public AccountType getAccountType() {
+        return new AccountType(getMnemonic(), getAccountTypeName(), getCreationDate());
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         AccountTypeDto that = (AccountTypeDto) o;
         return Objects.equals(mnemonic, that.mnemonic) && Objects.equals(accountTypeName, that.accountTypeName) && Objects.equals(creationDate, that.creationDate);
-    }
-
-    @JsonIgnore
-    public AccountType getAccountType() {
-        return new AccountType(getMnemonic(), getAccountTypeName(), getCreationDate());
     }
 
     @Override
