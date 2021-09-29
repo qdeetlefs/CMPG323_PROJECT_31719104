@@ -17,8 +17,6 @@ public class AccountTransaction implements Serializable {
     private long amount;
     private LocalDate transactionDate;
 
-    private AccountTransactionDetails details;
-
     public AccountTransaction() {
     }
 
@@ -60,16 +58,7 @@ public class AccountTransaction implements Serializable {
     public AccountType getAccountType() {
         return accountType;
     }
-
-    @OneToOne(targetEntity = AccountTransactionDetails.class, fetch = FetchType.LAZY, mappedBy = "accountTransaction", orphanRemoval = true, cascade = CascadeType.PERSIST)
-    public AccountTransactionDetails getDetails() {
-        return details;
-    }
-
-    public void setDetails(AccountTransactionDetails details) {
-        this.details = details;
-    }
-
+    
     public void setTransactionId(long transactionId) {
         this.transactionId = transactionId;
     }

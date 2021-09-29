@@ -8,4 +8,6 @@ public interface AccountTransactionTranslator {
     AccountTransaction getAccountTransactionByPk(Long transactionId);
 
     AccountTransaction getAccountTransactionByMemberId(Long memberId);
+
+    void addMiles(Long memberId, Long milesToAdd);
 }

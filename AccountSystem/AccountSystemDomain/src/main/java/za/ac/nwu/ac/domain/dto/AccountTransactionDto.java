@@ -3,7 +3,6 @@ package za.ac.nwu.ac.domain.dto;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.jetbrains.annotations.NotNull;
 import za.ac.nwu.ac.domain.persistence.AccountTransaction;
-import za.ac.nwu.ac.domain.persistence.AccountTransactionDetails;
 import za.ac.nwu.ac.domain.persistence.AccountType;
 
 import java.io.Serializable;
@@ -16,7 +15,6 @@ public class AccountTransactionDto implements Serializable {
     private Long memberId;
     private Long amount;
     private LocalDate transactionDate;
-    private AccountTransactionDetailsDto details;
 
 
     public AccountTransactionDto() {
@@ -29,9 +27,6 @@ public class AccountTransactionDto implements Serializable {
         this.memberId = accountTransaction.getMemberId();
         this.amount = accountTransaction.getAmount();
         this.transactionDate = accountTransaction.getTransactionDate();
-        if (null != accountTransaction.getDetails()) {
-            this.details = new AccountTransactionDetailsDto(accountTransaction.getDetails());
-        }
     }
 
     public AccountTransactionDto(Long transactionId, String accountTypeMnemonic, Long memberId, Long amount, LocalDate transactionDate) {
@@ -40,15 +35,6 @@ public class AccountTransactionDto implements Serializable {
         this.memberId = memberId;
         this.amount = amount;
         this.transactionDate = transactionDate;
-    }
-
-    public AccountTransactionDto(Long transactionId, String accountTypeMnemonic, Long memberId, Long amount, LocalDate transactionDate, AccountTransactionDetailsDto details) {
-        this.transactionId = transactionId;
-        this.accountTypeMnemonic = accountTypeMnemonic;
-        this.memberId = memberId;
-        this.amount = amount;
-        this.transactionDate = transactionDate;
-        this.details = details;
     }
 
 
@@ -95,14 +81,6 @@ public class AccountTransactionDto implements Serializable {
 
     public void setTransactionDate(LocalDate transactionDate) {
         this.transactionDate = transactionDate;
-    }
-
-    public AccountTransactionDetailsDto getDetails() {
-        return details;
-    }
-
-    public void setDetails(AccountTransactionDetailsDto details) {
-        this.details = details;
     }
 
     public void setTransactionId() {

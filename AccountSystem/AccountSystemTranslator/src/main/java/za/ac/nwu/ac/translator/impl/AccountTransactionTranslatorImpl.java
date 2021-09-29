@@ -41,4 +41,13 @@ public class AccountTransactionTranslatorImpl implements AccountTransactionTrans
         }
     }
 
+    @Override
+    public void addMiles(Long memberId, Long milesToAdd) {
+        try {
+            repo.addMiles(memberId, milesToAdd);
+        } catch (Exception e) {
+            throw new RuntimeException("Unable to read from the DB", e);
+        }
+    }
+
 }

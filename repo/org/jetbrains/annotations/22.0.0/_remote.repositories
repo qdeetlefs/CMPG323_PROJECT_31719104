@@ -1,4 +1,6 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Wed Sep 29 16:07:02 CAT 2021
+#Wed Sep 29 18:32:22 CAT 2021
+annotations-22.0.0-javadoc.jar>central=
 annotations-22.0.0.jar>central=
+annotations-22.0.0-sources.jar>central=
 annotations-22.0.0.pom>central=

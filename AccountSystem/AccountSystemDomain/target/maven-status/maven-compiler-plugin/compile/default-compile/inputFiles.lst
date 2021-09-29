@@ -1,7 +1,5 @@
 D:\Documents\CMPG323_PROJECT\AccountSystem\AccountSystemDomain\src\main\java\za\ac\nwu\ac\domain\persistence\AccountTransaction.java
 D:\Documents\CMPG323_PROJECT\AccountSystem\AccountSystemDomain\src\main\java\za\ac\nwu\ac\domain\persistence\AccountType.java
 D:\Documents\CMPG323_PROJECT\AccountSystem\AccountSystemDomain\src\main\java\za\ac\nwu\ac\domain\dto\AccountTransactionDto.java
-D:\Documents\CMPG323_PROJECT\AccountSystem\AccountSystemDomain\src\main\java\za\ac\nwu\ac\domain\persistence\AccountTransactionDetails.java
 D:\Documents\CMPG323_PROJECT\AccountSystem\AccountSystemDomain\src\main\java\za\ac\nwu\ac\domain\dto\AccountTypeDto.java
 D:\Documents\CMPG323_PROJECT\AccountSystem\AccountSystemDomain\src\main\java\za\ac\nwu\ac\domain\service\GeneralResponse.java
-D:\Documents\CMPG323_PROJECT\AccountSystem\AccountSystemDomain\src\main\java\za\ac\nwu\ac\domain\dto\AccountTransactionDetailsDto.java

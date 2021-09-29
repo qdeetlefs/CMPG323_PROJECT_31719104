@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: za.ac.nwu.ac.repo.persistence.AccountTypeRepositoryTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.206 s - in za.ac.nwu.ac.repo.persistence.AccountTypeRepositoryTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.198 s - in za.ac.nwu.ac.repo.persistence.AccountTypeRepositoryTest
