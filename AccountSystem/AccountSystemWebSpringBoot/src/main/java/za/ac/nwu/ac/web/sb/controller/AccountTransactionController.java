@@ -97,7 +97,7 @@ public class AccountTransactionController {
 
 
 
-    @PutMapping("ADD/{MilesToAdd:[\\d]}")//@RequestMapping(value = "{MilesToAdd:[\\d]}", method = RequestMethod.PUT)
+    @PutMapping("ADD/MilesToAdd")
     @ApiOperation(value = "Adds Miles to a member.", notes = "Adds miles to the corresponding member's amount.")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Miles added"),
@@ -113,9 +113,9 @@ public class AccountTransactionController {
 
             @ApiParam(value = "The amount to be added.",
                     example = "200",
-                    name = "Miles to add",
+                    name = "MilesToAdd",
                     required = true)
-            @PathVariable(value = "MilesToAdd") final Long MilesToAdd
+            @RequestParam("MilesToAdd") final Long MilesToAdd
     ){
         AccountTransactionDto accountTransaction = modifyAccountTransactionFlow.addMiles(memberId, MilesToAdd);
 
