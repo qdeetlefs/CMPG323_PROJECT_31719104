@@ -41,6 +41,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="AccountSystemDomain" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.9.0" level="project" />
+    <orderEntry type="library" name="Maven: org.jetbrains:annotations:22.0.0" level="project" />
     <orderEntry type="module" module-name="AccountSystemLogic" />
     <orderEntry type="module" module-name="AccountSystemTranslator" />
     <orderEntry type="module" module-name="AccountSystemRepository" />

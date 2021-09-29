@@ -2,6 +2,7 @@ package za.ac.nwu.ac.repo.persistence;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,7 @@ public class AccountTypeRepositoryTest {
 // What happens after each test
     }
 
+    @Ignore
     @Test
     public void test() {
         AccountType miles = accountTypeRepository.getAccountTypeByMnemonic("MILES");

@@ -43,7 +43,7 @@ public class AccountType implements Serializable {
 //    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CMPG323_ACCOUNTSYSTEM_GENERIC_SEQ")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY )
-    @Column(name = "ACCOUNT_TYPE_ID")
+    @Column(name = "account_type_id")
     public Long getAccountTypeId() {
         return accountTypeId;
     }
@@ -52,7 +52,7 @@ public class AccountType implements Serializable {
         this.accountTypeId = accountTypeId;
     }
 
-    @Column(name = "MNEMONIC")
+    @Column(name = "mnemonic")
     public String getMnemonic() {
         return mnemonic;
     }
@@ -61,7 +61,7 @@ public class AccountType implements Serializable {
         this.mnemonic = mnemonic;
     }
 
-    @Column(name = "ACCOUNT_TYPE_NAME")
+    @Column(name = "account_type_name")
     public String getAccountTypeName() {
         return accountTypeName;
     }
@@ -70,7 +70,7 @@ public class AccountType implements Serializable {
         this.accountTypeName = accountTypeName;
     }
 
-    @Column(name = "CREATION_DATE")
+    @Column(name = "creation_date")
     public LocalDate getCreationDate() {
         return creationDate;
     }

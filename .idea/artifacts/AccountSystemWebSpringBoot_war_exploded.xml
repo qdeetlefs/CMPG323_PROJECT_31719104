@@ -19,6 +19,7 @@
             <element id="module-output" name="AccountSystemDomain" />
           </element>
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.9.0" />
+          <element id="library" level="project" name="Maven: org.jetbrains:annotations:22.0.0" />
           <element id="archive" name="AccountSystemLogic-1.0-SNAPSHOT.jar">
             <element id="module-output" name="AccountSystemLogic" />
           </element>

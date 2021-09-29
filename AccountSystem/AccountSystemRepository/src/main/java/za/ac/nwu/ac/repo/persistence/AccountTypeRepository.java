@@ -29,4 +29,11 @@ public interface AccountTypeRepository extends JpaRepository<AccountType, Long> 
     @Modifying
     @Query(value = "UPDATE AccountType at set at.accountTypeName = :newAccountType_name, at.creationDate = :newCreationDate where at.mnemonic = :mnemonic")
     void updateAccountType(String mnemonic, String newAccountType_name, LocalDate newCreationDate);
+
+    @Query(value = "SELECT " +
+            "               at" +
+            "               FROM " +
+            "               AccountType at" +
+            "               WHERE at.mnemonic = :accountTypeMnemonic ")
+    AccountType getAccountTypeDbEntityByMnemonic(String accountTypeMnemonic);
 }

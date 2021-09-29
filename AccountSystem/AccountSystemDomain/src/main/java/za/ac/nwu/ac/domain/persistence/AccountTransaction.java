@@ -6,7 +6,7 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 @Entity
-@Table(name = "demo_account_tx", schema = "cmpg323_accountsystem")
+@Table(name = "account_tx", schema = "cmpg323_accountsystem")
 public class AccountTransaction implements Serializable {
 
     private static final long serialVersionUID = -4136429093512788169L;
@@ -16,6 +16,8 @@ public class AccountTransaction implements Serializable {
     private long memberId;
     private long amount;
     private LocalDate transactionDate;
+
+    private AccountTransactionDetails details;
 
     public AccountTransaction() {
     }
@@ -32,31 +34,40 @@ public class AccountTransaction implements Serializable {
 //    @SequenceGenerator(name = "CMPG323_ACCOUNTSYSTEM_GENERIC_SEQ", sequenceName = "cmpg323_accountsystem.CMPG323_ACCOUNTSYSTEM_GENERIC_SEQ", allocationSize = 1)
 //    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CMPG323_ACCOUNTSYSTEM_GENERIC_SEQ")
     @Id
-    @GeneratedValue(strategy = javax.persistence.GenerationType.IDENTITY )
-    @Column(name = "ACCOUNT_TX_ID")
+    @GeneratedValue(strategy = GenerationType.IDENTITY )
+    @Column(name = "tx_id")
     public long getTransactionId() {
         return transactionId;
     }
 
-    @Column(name = "MEMBER_ID")
+    @Column(name = "member_id")
     public long getMemberId() {
         return memberId;
     }
 
-    @Column(name = "AMOUNT")
+    @Column(name = "amount")
     public long getAmount() {
         return amount;
     }
 
-    @Column(name = "TX_DATE")
+    @Column(name = "tx_date")
     public LocalDate getTransactionDate() {
         return transactionDate;
     }
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "ACCOUNT_TYPE_ID")
+    @JoinColumn(name = "account_type_id")
     public AccountType getAccountType() {
         return accountType;
+    }
+
+    @OneToOne(targetEntity = AccountTransactionDetails.class, fetch = FetchType.LAZY, mappedBy = "accountTransaction"/*, orphanRemoval = true, cascade = CascadeType.PERSIST*/)
+    public AccountTransactionDetails getDetails() {
+        return details;
+    }
+
+    public void setDetails(AccountTransactionDetails details) {
+        this.details = details;
     }
 
     public void setTransactionId(long transactionId) {
