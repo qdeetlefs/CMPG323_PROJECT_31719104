@@ -104,4 +104,7 @@ public class AccountTransactionDto implements Serializable {
     public void setDetails(AccountTransactionDetailsDto details) {
         this.details = details;
     }
+
+    public void setTransactionId() {
+    }
 }
