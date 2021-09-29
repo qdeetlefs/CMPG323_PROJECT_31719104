@@ -4,4 +4,6 @@ import za.ac.nwu.ac.domain.dto.AccountTransactionDto;
 
 public interface FetchAccountTransactionFlow {
     AccountTransactionDto getAccountTransactionById(Long transactionId);
+
+    AccountTransactionDto getAccountTransactionByMemberId(Long memberId);
 }

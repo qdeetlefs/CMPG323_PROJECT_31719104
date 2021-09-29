@@ -32,17 +32,8 @@ public class CreateAccountTransactionFlowImpl implements CreateAccountTransactio
         AccountType accountType = fetchAccountTypeFlow.getAccountTypeDbEntityByMnemonic(accountTransactionDto.getAccountTypeMnemonic());
         AccountTransaction accountTransaction = accountTransactionDto.buildAccountTransaction(accountType);
 
-      /*  //Case 1 No cascade, save manually - Link in single direction (link parent to child)
-        AccountTransaction createdAccountTransaction = accountTransactionTranslator.save(accountTransaction);
-
         if (null != accountTransactionDto.getDetails()) {
-            AccountTransactionDetails accountTransactionDetails = accountTransactionDto.getDetails().buildAccountTransactionDetails(createdAccountTransaction);
-            accountTransactionDetailsTranslator.save(accountTransactionDetails);
-        }
-*/
-
-        if (null != accountTransactionDto.getDetails()) {
-            AccountTransactionDetails accountTransactionDetails = accountTransactionDto.getDetails().buildAccountTransactionDetails();
+            AccountTransactionDetails accountTransactionDetails = accountTransactionDto.getDetails().buildAccountTransactionDetails(accountTransaction);
             accountTransaction.setDetails(accountTransactionDetails);
         }
 
@@ -50,5 +41,6 @@ public class CreateAccountTransactionFlowImpl implements CreateAccountTransactio
 
         return new AccountTransactionDto(createdAccountTransaction);
     }
+
 
 }

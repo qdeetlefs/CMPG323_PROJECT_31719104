@@ -32,4 +32,13 @@ public class AccountTransactionTranslatorImpl implements AccountTransactionTrans
         }
     }
 
+    @Override
+    public AccountTransaction getAccountTransactionByMemberId(Long memberId) {
+        try {
+            return repo.findByMemberId(memberId);
+        } catch (Exception e) {
+            throw new RuntimeException("Unable to read from the DB", e);
+        }
+    }
+
 }

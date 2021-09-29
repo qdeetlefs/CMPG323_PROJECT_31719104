@@ -61,7 +61,7 @@ public class AccountTransaction implements Serializable {
         return accountType;
     }
 
-    @OneToOne(targetEntity = AccountTransactionDetails.class, fetch = FetchType.LAZY, mappedBy = "accountTransaction"/*, orphanRemoval = true, cascade = CascadeType.PERSIST*/)
+    @OneToOne(targetEntity = AccountTransactionDetails.class, fetch = FetchType.LAZY, mappedBy = "accountTransaction", orphanRemoval = true, cascade = CascadeType.PERSIST)
     public AccountTransactionDetails getDetails() {
         return details;
     }

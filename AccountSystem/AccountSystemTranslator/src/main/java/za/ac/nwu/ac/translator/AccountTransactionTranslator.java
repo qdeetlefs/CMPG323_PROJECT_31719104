@@ -6,4 +6,6 @@ public interface AccountTransactionTranslator {
     AccountTransaction save(AccountTransaction accountTransaction);
 
     AccountTransaction getAccountTransactionByPk(Long transactionId);
+
+    AccountTransaction getAccountTransactionByMemberId(Long memberId);
 }

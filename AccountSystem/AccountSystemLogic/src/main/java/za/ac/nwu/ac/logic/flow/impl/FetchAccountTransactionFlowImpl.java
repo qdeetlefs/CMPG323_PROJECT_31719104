@@ -18,4 +18,10 @@ public class FetchAccountTransactionFlowImpl implements FetchAccountTransactionF
         AccountTransaction accountTransaction = translator.getAccountTransactionByPk(transactionId);
         return null != accountTransaction ? new AccountTransactionDto(accountTransaction): null;
     }
+
+    @Override
+    public AccountTransactionDto getAccountTransactionByMemberId(Long memberId) {
+        AccountTransaction accountTransaction = translator.getAccountTransactionByMemberId(memberId);
+        return null != accountTransaction ? new AccountTransactionDto(accountTransaction): null;
+    }
 }
