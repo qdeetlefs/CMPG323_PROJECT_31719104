@@ -30,7 +30,7 @@ public interface AccountTransactionRepository extends JpaRepository<AccountTrans
 
 
     @Modifying
-    @Query(value = "UPDATE AccountTransaction at set at.amount = at.amount - :pointsToAdd, at.transactionDate = :newTransactionDate  where at.memberId = :memberId")
+    @Query(value = "UPDATE AccountTransaction at set at.amount = at.amount + :pointsToAdd, at.transactionDate = :newTransactionDate  where at.memberId = :memberId")
     void addPoints(Long memberId, Long pointsToAdd, LocalDate newTransactionDate);
 
     @Modifying
