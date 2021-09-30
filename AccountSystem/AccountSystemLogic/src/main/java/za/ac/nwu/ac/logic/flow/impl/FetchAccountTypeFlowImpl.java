@@ -35,8 +35,4 @@ public class FetchAccountTypeFlowImpl implements FetchAccountTypeFlow {
     public AccountType getAccountTypeDbEntityByMnemonic(String accountTypeMnemonic) {
         return accountTypeTranslator.getAccountTypeDbEntityByMnemonic(accountTypeMnemonic);
     }
-
-    public boolean methodToTest() {
-        return true;
-    }
 }

@@ -122,9 +122,15 @@ public class AccountTransactionController {
                     name = "newTransactionDate")
             @RequestParam(value = "newTransactionDate",required = false)
             @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
-                    LocalDate newTransactionDate
+                    LocalDate newTransactionDate,
+
+            @ApiParam(value = "Select true for optional exception.",
+                    example = "true",
+                    name = "optionalException",
+                    required = true)
+            @RequestParam("optionalException") final boolean optionalException
     ){
-        AccountTransactionDto accountTransaction = modifyAccountTransactionFlow.addMiles(memberId, MilesToAdd,newTransactionDate);
+        AccountTransactionDto accountTransaction = modifyAccountTransactionFlow.addMiles(memberId, MilesToAdd,newTransactionDate, optionalException);
 
         GeneralResponse<AccountTransactionDto> response = new GeneralResponse<>(true, accountTransaction);
 

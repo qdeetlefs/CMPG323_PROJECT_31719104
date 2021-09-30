@@ -15,6 +15,7 @@ import za.ac.nwu.ac.translator.AccountTypeTranslator;
 import java.time.LocalDate;
 
 import static org.junit.Assert.*;
+import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
 public class CreateAccountTypeFlowImplTest {
@@ -38,11 +39,12 @@ public class CreateAccountTypeFlowImplTest {
     @Test
     public void create() {
 
-        AccountTypeDto accountTypeDto = new AccountTypeDto(null,null,LocalDate.now());
+        AccountTypeDto accountTypeDto = new AccountTypeDto(null, null, LocalDate.now());
 
-        Mockito.when(translator.create(Mockito.any(AccountTypeDto.class))).then(AdditionalAnswers.returnsFirstArg());
+        when(translator.create(Mockito.any(AccountTypeDto.class))).then(AdditionalAnswers.returnsFirstArg());
         AccountTypeDto result = flow.create(new AccountTypeDto());
         assertNotNull(result);
+
         assertEquals(LocalDate.now(), result.getCreationDate());
         Mockito.verify(translator, Mockito.times(1)).create(Mockito.eq(accountTypeDto));
     }

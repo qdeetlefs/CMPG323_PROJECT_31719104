@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ModifyAccountTransactionFlowImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">AccountSystemLogic</a> &gt; <a href="index.source.html" class="el_package">za.ac.nwu.ac.logic.flow.impl</a> &gt; <span class="el_source">ModifyAccountTransactionFlowImpl.java</span></div><h1>ModifyAccountTransactionFlowImpl.java</h1><pre class="source lang-java linenums">package za.ac.nwu.ac.logic.flow.impl;
+
+import org.springframework.stereotype.Component;
+import za.ac.nwu.ac.domain.dto.AccountTransactionDto;
+import za.ac.nwu.ac.domain.persistence.AccountTransaction;
+import za.ac.nwu.ac.logic.flow.ModifyAccountTransactionFlow;
+import za.ac.nwu.ac.translator.AccountTransactionTranslator;
+
+import javax.transaction.Transactional;
+import java.time.LocalDate;
+
+@Transactional
+@Component
+public class ModifyAccountTransactionFlowImpl implements ModifyAccountTransactionFlow {
+
+    private final AccountTransactionTranslator accountTransactionTranslator;
+
+<span class="nc" id="L18">    public ModifyAccountTransactionFlowImpl(AccountTransactionTranslator accountTransactionTranslator) {</span>
+<span class="nc" id="L19">        this.accountTransactionTranslator = accountTransactionTranslator;</span>
+<span class="nc" id="L20">    }</span>
+
+    @Override
+    public AccountTransactionDto addMiles(Long memberId, Long milesToAdd, LocalDate newTransactionDate) {
+
+<span class="nc bnc" id="L25" title="All 2 branches missed.">        if (null == newTransactionDate) {</span>
+<span class="nc" id="L26">            newTransactionDate = LocalDate.now();</span>
+        }
+<span class="nc" id="L28">        accountTransactionTranslator.addMiles(memberId, milesToAdd,newTransactionDate);</span>
+<span class="nc" id="L29">        return null; //ADD RETURN ARGUMENTS</span>
+    }
+
+    @Override
+    public AccountTransactionDto subtractMiles(Long memberId, Long milesToSubtract, LocalDate newTransactionDate) {
+<span class="nc bnc" id="L34" title="All 2 branches missed.">        if (null == newTransactionDate) {</span>
+<span class="nc" id="L35">            newTransactionDate = LocalDate.now();</span>
+        }
+<span class="nc" id="L37">        accountTransactionTranslator.subtractMiles(memberId, milesToSubtract,newTransactionDate);</span>
+<span class="nc" id="L38">        return null; //ADD RETURN ARGUMENTS</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span></div></body></html>

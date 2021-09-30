@@ -99,7 +99,7 @@ public class AccountTypeControllerTest {
         String expectedResponse = "{\"payload\":" +
                 "{\"mnemonic\":\"MILES\",\"accountTypeName\":\"Miles account type\",\"creationDate\":[2020,1,1]}}";
 
-        AccountTypeDto accountType = new AccountTypeDto("MILES", "Miles account type", LocalDate.parse("2020 - 01 - 01"));
+        AccountTypeDto accountType = new AccountTypeDto("MILES", "Miles account type", LocalDate.parse("2020-01-01"));
                 when(createAccountTypeFlow.create(eq(accountType))).then(returnsFirstArg());
 
         MvcResult mvcResult =
@@ -122,7 +122,7 @@ public class AccountTypeControllerTest {
         String expectedResponse = "{\"payload\":" +
                 "{\"mnemonic\":\"PLAY\",\"accountTypeName\":\"Play account type\",\"creationDate\":[2021,4,1]}}";
 
-        AccountTypeDto accountType = new AccountTypeDto("PLAY", "Play account type", LocalDate.parse("2021 - 04 - 01"));
+        AccountTypeDto accountType = new AccountTypeDto("PLAY", "Play account type", LocalDate.parse("2021-04-01"));
 
         when(modifyAccountTypeFlow.deleteAccountType(anyString())).thenReturn(accountType);
 

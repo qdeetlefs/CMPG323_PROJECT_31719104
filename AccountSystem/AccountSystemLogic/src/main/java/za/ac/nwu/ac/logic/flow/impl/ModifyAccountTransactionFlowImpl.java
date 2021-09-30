@@ -2,7 +2,6 @@ package za.ac.nwu.ac.logic.flow.impl;
 
 import org.springframework.stereotype.Component;
 import za.ac.nwu.ac.domain.dto.AccountTransactionDto;
-import za.ac.nwu.ac.domain.persistence.AccountTransaction;
 import za.ac.nwu.ac.logic.flow.ModifyAccountTransactionFlow;
 import za.ac.nwu.ac.translator.AccountTransactionTranslator;
 
@@ -20,10 +19,14 @@ public class ModifyAccountTransactionFlowImpl implements ModifyAccountTransactio
     }
 
     @Override
-    public AccountTransactionDto addMiles(Long memberId, Long milesToAdd, LocalDate newTransactionDate) {
+    public AccountTransactionDto addMiles(Long memberId, Long milesToAdd, LocalDate newTransactionDate, boolean optionalException) {
 
         if (null == newTransactionDate) {
             newTransactionDate = LocalDate.now();
+        }
+
+        if (optionalException){
+            throw new RuntimeException("Transaction Rollback");
         }
         accountTransactionTranslator.addMiles(memberId, milesToAdd,newTransactionDate);
         return null; //ADD RETURN ARGUMENTS
