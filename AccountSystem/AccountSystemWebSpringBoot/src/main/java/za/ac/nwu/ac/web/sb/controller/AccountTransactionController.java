@@ -18,6 +18,7 @@ import za.ac.nwu.ac.logic.flow.FetchAccountTransactionFlow;
 import za.ac.nwu.ac.logic.flow.ModifyAccountTransactionFlow;
 
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
@@ -115,9 +116,48 @@ public class AccountTransactionController {
                     example = "200",
                     name = "MilesToAdd",
                     required = true)
-            @RequestParam("MilesToAdd") final Long MilesToAdd
+            @RequestParam("MilesToAdd") final Long MilesToAdd,
+
+            @ApiParam(value = "The optional new transaction date in ISO date format (yyyy-MM-dd)\r\n,",
+                    name = "newTransactionDate")
+            @RequestParam(value = "newTransactionDate",required = false)
+            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+                    LocalDate newTransactionDate
     ){
-        AccountTransactionDto accountTransaction = modifyAccountTransactionFlow.addMiles(memberId, MilesToAdd);
+        AccountTransactionDto accountTransaction = modifyAccountTransactionFlow.addMiles(memberId, MilesToAdd,newTransactionDate);
+
+        GeneralResponse<AccountTransactionDto> response = new GeneralResponse<>(true, accountTransaction);
+
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
+    @PutMapping("SUBTRACT/MilesToSubtract")
+    @ApiOperation(value = "Subtracts Miles from a member.", notes = "Subtracts miles to the corresponding member's amount.")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Miles Subtracted"),
+            @ApiResponse(code = 400, message = "Bad Request", response = GeneralResponse.class),
+            @ApiResponse(code = 404, message = "Not found", response = GeneralResponse.class),
+            @ApiResponse(code = 500, message = "Internal Server Error", response = GeneralResponse.class)})
+    public ResponseEntity<GeneralResponse<AccountTransactionDto>> subtractMiles(
+            @ApiParam(value = "The memberId that uniquely identifies the account.",
+                    example = "23",
+                    name = "memberId",
+                    required = true)
+            @RequestParam("memberId") final Long memberId,
+
+            @ApiParam(value = "The amount to be subtracted.",
+                    example = "200",
+                    name = "MilesToSubtract",
+                    required = true)
+            @RequestParam("MilesToSubtract") final Long MilesToSubtract,
+
+            @ApiParam(value = "The optional new transaction date in ISO date format (yyyy-MM-dd)\r\n,",
+                    name = "newTransactionDate")
+            @RequestParam(value = "newTransactionDate",required = false)
+            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+                    LocalDate newTransactionDate
+    ){
+        AccountTransactionDto accountTransaction = modifyAccountTransactionFlow.subtractMiles(memberId, MilesToSubtract,newTransactionDate);
 
         GeneralResponse<AccountTransactionDto> response = new GeneralResponse<>(true, accountTransaction);
 

@@ -2,6 +2,8 @@ package za.ac.nwu.ac.translator;
 
 import za.ac.nwu.ac.domain.persistence.AccountTransaction;
 
+import java.time.LocalDate;
+
 public interface AccountTransactionTranslator {
     AccountTransaction save(AccountTransaction accountTransaction);
 
@@ -9,5 +11,7 @@ public interface AccountTransactionTranslator {
 
     AccountTransaction getAccountTransactionByMemberId(Long memberId);
 
-    void addMiles(Long memberId, Long milesToAdd);
+    void addMiles(Long memberId, Long milesToAdd, LocalDate newTransactionDate);
+
+    void subtractMiles(Long memberId, Long milesToSubtract, LocalDate newTransactionDate);
 }

@@ -5,6 +5,8 @@ import za.ac.nwu.ac.domain.persistence.AccountTransaction;
 import za.ac.nwu.ac.repo.persistence.AccountTransactionRepository;
 import za.ac.nwu.ac.translator.AccountTransactionTranslator;
 
+import java.time.LocalDate;
+
 @Component
 public class AccountTransactionTranslatorImpl implements AccountTransactionTranslator {
 
@@ -42,11 +44,20 @@ public class AccountTransactionTranslatorImpl implements AccountTransactionTrans
     }
 
     @Override
-    public void addMiles(Long memberId, Long milesToAdd) {
+    public void addMiles(Long memberId, Long milesToAdd, LocalDate newTransactionDate) {
         try {
-            repo.addMiles(memberId, milesToAdd);
+            repo.addMiles(memberId, milesToAdd, newTransactionDate);
         } catch (Exception e) {
-            throw new RuntimeException("Unable to read from the DB", e);
+            throw new RuntimeException("Unable to modify the DB", e);
+        }
+    }
+
+    @Override
+    public void subtractMiles(Long memberId, Long milesToSubtract, LocalDate newTransactionDate) {
+        try {
+            repo.subtractMiles(memberId, milesToSubtract, newTransactionDate);
+        } catch (Exception e) {
+            throw new RuntimeException("Unable to modify the DB", e);
         }
     }
 
