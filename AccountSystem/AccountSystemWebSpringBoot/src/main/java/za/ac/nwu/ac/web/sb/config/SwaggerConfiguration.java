@@ -1,5 +1,7 @@
 package za.ac.nwu.ac.web.sb.config;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,6 +14,8 @@ import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
+import za.ac.nwu.ac.translator.impl.AccountTypeTranslatorImpl;
+
 import java.util.Collections;
 
 
@@ -19,6 +23,8 @@ import java.util.Collections;
 @EnableSwagger2
 @Import(springfox.bean.validators.configuration.BeanValidatorPluginsConfiguration.class)
 public class SwaggerConfiguration {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(SwaggerConfiguration.class);
 
     @Value("${swagger.application.version}")
     private String applicationVersion;

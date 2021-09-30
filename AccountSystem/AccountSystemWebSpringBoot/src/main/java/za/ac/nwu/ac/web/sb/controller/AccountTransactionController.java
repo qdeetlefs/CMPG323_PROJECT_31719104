@@ -4,6 +4,8 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -16,6 +18,7 @@ import za.ac.nwu.ac.domain.service.GeneralResponse;
 import za.ac.nwu.ac.logic.flow.CreateAccountTransactionFlow;
 import za.ac.nwu.ac.logic.flow.FetchAccountTransactionFlow;
 import za.ac.nwu.ac.logic.flow.ModifyAccountTransactionFlow;
+import za.ac.nwu.ac.web.sb.config.WebConfig;
 
 import java.time.LocalDate;
 import java.util.Date;
@@ -25,6 +28,8 @@ import java.util.Objects;
 @RestController
 @RequestMapping("account-transaction")
 public class AccountTransactionController {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(AccountTransactionController.class);
 
     private final CreateAccountTransactionFlow createAccountTransactionFlow;
     private final FetchAccountTransactionFlow fetchAccountTransactionFlow;

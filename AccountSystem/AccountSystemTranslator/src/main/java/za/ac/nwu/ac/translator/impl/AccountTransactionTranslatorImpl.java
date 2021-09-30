@@ -1,14 +1,19 @@
 package za.ac.nwu.ac.translator.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import za.ac.nwu.ac.domain.persistence.AccountTransaction;
 import za.ac.nwu.ac.repo.persistence.AccountTransactionRepository;
 import za.ac.nwu.ac.translator.AccountTransactionTranslator;
+import za.ac.nwu.ac.translator.config.TranslatorConfig;
 
 import java.time.LocalDate;
 
 @Component
 public class AccountTransactionTranslatorImpl implements AccountTransactionTranslator {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(AccountTransactionTranslatorImpl.class);
 
     private AccountTransactionRepository repo;
 

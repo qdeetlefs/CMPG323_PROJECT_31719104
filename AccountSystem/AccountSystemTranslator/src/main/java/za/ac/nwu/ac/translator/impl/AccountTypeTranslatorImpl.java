@@ -1,5 +1,7 @@
 package za.ac.nwu.ac.translator.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import za.ac.nwu.ac.domain.dto.AccountTypeDto;
@@ -13,6 +15,9 @@ import java.util.List;
 
 @Component
 public class AccountTypeTranslatorImpl implements AccountTypeTranslator {
+
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(AccountTypeTranslatorImpl.class);
 
     private final AccountTypeRepository accountTypeRepository;
 

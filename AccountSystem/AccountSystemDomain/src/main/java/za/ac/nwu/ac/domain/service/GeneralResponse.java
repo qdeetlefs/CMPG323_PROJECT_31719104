@@ -1,9 +1,15 @@
 package za.ac.nwu.ac.domain.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import za.ac.nwu.ac.domain.persistence.AccountType;
+
 import java.io.Serializable;
 import java.util.Objects;
 
 public class GeneralResponse<T> implements Serializable {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(GeneralResponse.class);
 
     private static final long serialVersionUID = -6511059914485318226L;
 
@@ -21,7 +27,7 @@ public class GeneralResponse<T> implements Serializable {
     public T getPayload() {return payload;}
 
     @Override
-    public boolean equals(Object o){
+    public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         GeneralResponse<?> that = (GeneralResponse<?>) o;
@@ -29,7 +35,9 @@ public class GeneralResponse<T> implements Serializable {
     }
 
     @Override
-    public int hashCode() {return Objects.hash(successful, payload); }
+    public int hashCode() {
+        return Objects.hash(successful, payload);
+    }
 
     @Override
     public String toString() {

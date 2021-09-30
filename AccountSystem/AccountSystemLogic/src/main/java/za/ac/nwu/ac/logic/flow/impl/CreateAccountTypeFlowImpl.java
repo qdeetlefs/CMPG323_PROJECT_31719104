@@ -1,6 +1,8 @@
 package za.ac.nwu.ac.logic.flow.impl;
 
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import za.ac.nwu.ac.domain.dto.AccountTypeDto;
 import za.ac.nwu.ac.logic.flow.CreateAccountTypeFlow;
@@ -12,6 +14,8 @@ import java.time.LocalDate;
 @Transactional
 @Component("createAccountTypeFlowName")
 public class CreateAccountTypeFlowImpl implements CreateAccountTypeFlow {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(CreateAccountTypeFlowImpl.class);
 
     private final AccountTypeTranslator accountTypeTranslator;
 

@@ -2,13 +2,18 @@ package za.ac.nwu.ac.domain.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.jetbrains.annotations.NotNull;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import za.ac.nwu.ac.domain.persistence.AccountTransaction;
 import za.ac.nwu.ac.domain.persistence.AccountType;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class AccountTransactionDto implements Serializable {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(AccountTransactionDto.class);
 
     private Long transactionId;
     private String accountTypeMnemonic;
@@ -84,5 +89,29 @@ public class AccountTransactionDto implements Serializable {
     }
 
     public void setTransactionId() {
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        AccountTransactionDto that = (AccountTransactionDto) o;
+        return Objects.equals(transactionId, that.transactionId) && Objects.equals(accountTypeMnemonic, that.accountTypeMnemonic) && Objects.equals(memberId, that.memberId) && Objects.equals(amount, that.amount) && Objects.equals(transactionDate, that.transactionDate);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(transactionId, accountTypeMnemonic, memberId, amount, transactionDate);
+    }
+
+    @Override
+    public String toString() {
+        return "AccountTransactionDto{" +
+                "transactionId=" + transactionId +
+                ", accountTypeMnemonic='" + accountTypeMnemonic + '\'' +
+                ", memberId=" + memberId +
+                ", amount=" + amount +
+                ", transactionDate=" + transactionDate +
+                '}';
     }
 }

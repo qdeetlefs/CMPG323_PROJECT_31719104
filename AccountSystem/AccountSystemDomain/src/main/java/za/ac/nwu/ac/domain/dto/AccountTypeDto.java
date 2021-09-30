@@ -1,5 +1,7 @@
 package za.ac.nwu.ac.domain.dto;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import za.ac.nwu.ac.domain.persistence.AccountType;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModel;
@@ -10,6 +12,8 @@ import java.util.Objects;
 
 @ApiModel(value = "AccountType", description = "A DTO that represents the AccountType")
 public class AccountTypeDto implements Serializable {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(AccountTypeDto.class);
 
     private static final long serialVersionUID = -7731154715176897719L;
 

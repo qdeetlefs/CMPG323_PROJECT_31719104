@@ -1,5 +1,8 @@
 package za.ac.nwu.ac.domain.persistence;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -9,6 +12,8 @@ import java.util.Set;
 @Entity
 @Table(name = "account_type", schema = "cmpg323_accountsystem")
 public class AccountType implements Serializable {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(AccountType.class);
 
     private static final long serialVersionUID = 5217592106233605838L;
 
