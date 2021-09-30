@@ -66,4 +66,22 @@ public class AccountTransactionTranslatorImpl implements AccountTransactionTrans
         }
     }
 
+    @Override
+    public void addPoints(Long memberId, Long pointsToAdd, LocalDate newTransactionDate) {
+        try {
+            repo.addPoints(memberId, pointsToAdd, newTransactionDate);
+        } catch (Exception e) {
+            throw new RuntimeException("Unable to modify the DB", e);
+        }
+    }
+
+    @Override
+    public void subtractPoints(Long memberId, Long pointsToSubtract, LocalDate newTransactionDate) {
+        try {
+            repo.subtractPoints(memberId, pointsToSubtract, newTransactionDate);
+        } catch (Exception e) {
+            throw new RuntimeException("Unable to modify the DB", e);
+        }
+    }
+
 }

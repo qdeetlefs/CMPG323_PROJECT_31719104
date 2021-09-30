@@ -51,4 +51,23 @@ public class ModifyAccountTransactionFlowImpl implements ModifyAccountTransactio
         accountTransactionTranslator.subtractMiles(memberId, milesToSubtract,newTransactionDate);
         return null; //ADD RETURN ARGUMENTS
     }
+
+    @Override
+    public AccountTransactionDto addPoints(Long memberId, Long pointsToAdd, LocalDate newTransactionDate) {
+        if (null == newTransactionDate) {
+            newTransactionDate = LocalDate.now();
+        }
+        accountTransactionTranslator.addPoints(memberId, pointsToAdd,newTransactionDate);
+
+        return null;
+    }
+
+    @Override
+    public AccountTransactionDto subtractPoints(Long memberId, Long pointsToSubtract, LocalDate newTransactionDate) {
+        if (null == newTransactionDate) {
+            newTransactionDate = LocalDate.now();
+        }
+        accountTransactionTranslator.subtractPoints(memberId, pointsToSubtract,newTransactionDate);
+        return null;
+    }
 }

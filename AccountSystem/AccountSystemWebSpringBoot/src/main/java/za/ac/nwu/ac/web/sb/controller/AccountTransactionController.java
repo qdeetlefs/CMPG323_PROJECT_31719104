@@ -175,4 +175,72 @@ public class AccountTransactionController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
+    @PutMapping("ADD/PointsToAdd")
+    @ApiOperation(value = "Adds Points to a member.", notes = "Adds Points to the corresponding member's amount.")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Points added"),
+            @ApiResponse(code = 400, message = "Bad Request", response = GeneralResponse.class),
+            @ApiResponse(code = 404, message = "Not found", response = GeneralResponse.class),
+            @ApiResponse(code = 500, message = "Internal Server Error", response = GeneralResponse.class)})
+    public ResponseEntity<GeneralResponse<AccountTransactionDto>> addPoints(
+            @ApiParam(value = "The memberId that uniquely identifies the account.",
+                    example = "23",
+                    name = "memberId",
+                    required = true)
+            @RequestParam("memberId") final Long memberId,
+
+            @ApiParam(value = "The amount to be added.",
+                    example = "200",
+                    name = "PointsToAdd",
+                    required = true)
+            @RequestParam("PointsToAdd") final Long PointsToAdd,
+
+            @ApiParam(value = "The optional new transaction date in ISO date format (yyyy-MM-dd)\r\n,",
+                    name = "newTransactionDate")
+            @RequestParam(value = "newTransactionDate",required = false)
+            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+                    LocalDate newTransactionDate
+    ){
+        AccountTransactionDto accountTransaction = modifyAccountTransactionFlow.addPoints(memberId, PointsToAdd,newTransactionDate);
+
+        GeneralResponse<AccountTransactionDto> response = new GeneralResponse<>(true, accountTransaction);
+
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
+    @PutMapping("SUBTRACT/PointsToSubtract")
+    @ApiOperation(value = "Subtracts Points from a member.", notes = "Subtracts Points to the corresponding member's amount.")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Points Subtracted"),
+            @ApiResponse(code = 400, message = "Bad Request", response = GeneralResponse.class),
+            @ApiResponse(code = 404, message = "Not found", response = GeneralResponse.class),
+            @ApiResponse(code = 500, message = "Internal Server Error", response = GeneralResponse.class)})
+    public ResponseEntity<GeneralResponse<AccountTransactionDto>> subtractPoints(
+            @ApiParam(value = "The memberId that uniquely identifies the account.",
+                    example = "23",
+                    name = "memberId",
+                    required = true)
+            @RequestParam("memberId") final Long memberId,
+
+            @ApiParam(value = "The amount to be subtracted.",
+                    example = "200",
+                    name = "PointsToSubtract",
+                    required = true)
+            @RequestParam("PointsToSubtract") final Long PointsToSubtract,
+
+            @ApiParam(value = "The optional new transaction date in ISO date format (yyyy-MM-dd)\r\n,",
+                    name = "newTransactionDate")
+            @RequestParam(value = "newTransactionDate",required = false)
+            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+                    LocalDate newTransactionDate
+    ){
+        AccountTransactionDto accountTransaction = modifyAccountTransactionFlow.subtractPoints(memberId, PointsToSubtract,newTransactionDate);
+
+        GeneralResponse<AccountTransactionDto> response = new GeneralResponse<>(true, accountTransaction);
+
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
+
+
 }

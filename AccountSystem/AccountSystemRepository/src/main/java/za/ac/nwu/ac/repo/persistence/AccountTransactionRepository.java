@@ -27,4 +27,13 @@ public interface AccountTransactionRepository extends JpaRepository<AccountTrans
     @Modifying
     @Query(value = "UPDATE AccountTransaction at set at.amount = at.amount - :milesToSubtract, at.transactionDate = :newTransactionDate  where at.memberId = :memberId")
     void subtractMiles(Long memberId, Long milesToSubtract, LocalDate newTransactionDate);
+
+
+    @Modifying
+    @Query(value = "UPDATE AccountTransaction at set at.amount = at.amount - :pointsToAdd, at.transactionDate = :newTransactionDate  where at.memberId = :memberId")
+    void addPoints(Long memberId, Long pointsToAdd, LocalDate newTransactionDate);
+
+    @Modifying
+    @Query(value = "UPDATE AccountTransaction at set at.amount = at.amount - :pointsToSubtract, at.transactionDate = :newTransactionDate  where at.memberId = :memberId")
+    void subtractPoints(Long memberId, Long pointsToSubtract, LocalDate newTransactionDate);
 }

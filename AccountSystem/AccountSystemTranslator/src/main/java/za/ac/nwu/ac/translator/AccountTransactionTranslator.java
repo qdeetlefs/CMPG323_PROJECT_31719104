@@ -14,4 +14,8 @@ public interface AccountTransactionTranslator {
     void addMiles(Long memberId, Long milesToAdd, LocalDate newTransactionDate);
 
     void subtractMiles(Long memberId, Long milesToSubtract, LocalDate newTransactionDate);
+
+    void addPoints(Long memberId, Long pointsToAdd, LocalDate newTransactionDate);
+
+    void subtractPoints(Long memberId, Long pointsToSubtract, LocalDate newTransactionDate);
 }
