@@ -1,0 +1,7 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Sep 30 15:36:34 SAST 2021
+https\://repo.maven.apache.org/maven2/.lastUpdated=1633008994000
+http\://www.terracotta.org/download/reflector/releases/.error=
+@default-terracotta-snapshots-http\://www.terracotta.org/download/reflector/snapshots/.lastUpdated=1633008992835
+http\://www.terracotta.org/download/reflector/snapshots/.error=Could not transfer artifact org.reactivestreams\:reactive-streams\:pom\:1.0.2 from/to terracotta-snapshots (http\://www.terracotta.org/download/reflector/snapshots)\: authorization failed for http\://www.terracotta.org/download/reflector/snapshots/org/reactivestreams/reactive-streams/1.0.2/reactive-streams-1.0.2.pom, status\: 403 Forbidden
+http\://www.terracotta.org/download/reflector/releases/.lastUpdated=1633008993651

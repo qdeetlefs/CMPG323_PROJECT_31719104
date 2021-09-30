@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Sep 30 15:32:27 SAST 2021
+@default-terracotta-snapshots-http\://www.terracotta.org/download/reflector/snapshots/.lastUpdated=1633008746719
+http\://www.terracotta.org/download/reflector/snapshots/.error=Could not transfer artifact net.sf.ehcache\:ehcache-parent\:pom\:2.22 from/to terracotta-snapshots (http\://www.terracotta.org/download/reflector/snapshots)\: authorization failed for http\://www.terracotta.org/download/reflector/snapshots/net/sf/ehcache/ehcache-parent/2.22/ehcache-parent-2.22.pom, status\: 403 Forbidden
+http\://www.terracotta.org/download/reflector/releases/.lastUpdated=1633008747220

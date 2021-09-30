@@ -1,0 +1,7 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Sep 30 15:30:13 SAST 2021
+https\://oss.sonatype.org/content/repositories/snapshots/.lastUpdated=1633008611400
+http\://repo2.maven.org/maven2/.error=Could not transfer artifact com.hazelcast\:hazelcast-client\:pom\:3.11.4 from/to backup-repository (http\://repo2.maven.org/maven2/)\: transfer failed for http\://repo2.maven.org/maven2/com/hazelcast/hazelcast-client/3.11.4/hazelcast-client-3.11.4.pom
+https\://oss.sonatype.org/content/repositories/snapshots/.error=
+https\://oss.sonatype.org/content/repositories/releases/.lastUpdated=1633008613306
+@default-backup-repository-http\://repo2.maven.org/maven2/.lastUpdated=1633008610474

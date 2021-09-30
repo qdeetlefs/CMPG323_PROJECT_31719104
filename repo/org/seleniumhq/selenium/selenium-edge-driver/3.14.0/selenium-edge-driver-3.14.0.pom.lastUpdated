@@ -1,0 +1,7 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Sep 30 15:36:42 SAST 2021
+https\://repo.maven.apache.org/maven2/.lastUpdated=1633009002224
+http\://www.terracotta.org/download/reflector/releases/.error=
+@default-terracotta-snapshots-http\://www.terracotta.org/download/reflector/snapshots/.lastUpdated=1633009001365
+http\://www.terracotta.org/download/reflector/snapshots/.error=Could not transfer artifact org.seleniumhq.selenium\:selenium-edge-driver\:pom\:3.14.0 from/to terracotta-snapshots (http\://www.terracotta.org/download/reflector/snapshots)\: authorization failed for http\://www.terracotta.org/download/reflector/snapshots/org/seleniumhq/selenium/selenium-edge-driver/3.14.0/selenium-edge-driver-3.14.0.pom, status\: 403 Forbidden
+http\://www.terracotta.org/download/reflector/releases/.lastUpdated=1633009001871

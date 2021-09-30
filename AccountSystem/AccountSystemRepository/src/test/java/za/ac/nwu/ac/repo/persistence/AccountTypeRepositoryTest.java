@@ -34,7 +34,7 @@ public class AccountTypeRepositoryTest {
 // What happens after each test
     }
 
-    @Ignore
+
     @Test
     public void test() {
         AccountType miles = accountTypeRepository.getAccountTypeByMnemonic("MILES");

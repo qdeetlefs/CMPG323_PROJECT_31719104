@@ -1,0 +1,7 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Sep 30 15:30:14 SAST 2021
+https\://oss.sonatype.org/content/repositories/snapshots/.lastUpdated=1633008613553
+http\://repo2.maven.org/maven2/.error=Could not transfer artifact com.hazelcast\:hazelcast-hibernate52\:pom\:1.2.3 from/to backup-repository (http\://repo2.maven.org/maven2/)\: transfer failed for http\://repo2.maven.org/maven2/com/hazelcast/hazelcast-hibernate52/1.2.3/hazelcast-hibernate52-1.2.3.pom
+https\://oss.sonatype.org/content/repositories/snapshots/.error=
+https\://oss.sonatype.org/content/repositories/releases/.lastUpdated=1633008614866
+@default-backup-repository-http\://repo2.maven.org/maven2/.lastUpdated=1633008613331

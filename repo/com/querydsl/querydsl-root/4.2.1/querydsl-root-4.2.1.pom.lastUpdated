@@ -1,0 +1,9 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Sep 30 15:30:23 SAST 2021
+https\://oss.sonatype.org/content/repositories/snapshots/.lastUpdated=1633008622300
+http\://repo2.maven.org/maven2/.error=Could not transfer artifact com.querydsl\:querydsl-root\:pom\:4.2.1 from/to backup-repository (http\://repo2.maven.org/maven2/)\: transfer failed for http\://repo2.maven.org/maven2/com/querydsl/querydsl-root/4.2.1/querydsl-root-4.2.1.pom
+https\://oss.sonatype.org/content/repositories/snapshots/.error=
+@default-spring\ roo\ repository-http\://spring-roo-repository.springsource.org/release/.lastUpdated=1633008622073
+https\://oss.sonatype.org/content/repositories/releases/.lastUpdated=1633008623562
+http\://spring-roo-repository.springsource.org/release/.error=Could not transfer artifact com.querydsl\:querydsl-root\:pom\:4.2.1 from/to spring roo repository (http\://spring-roo-repository.springsource.org/release)\: authorization failed for http\://spring-roo-repository.springsource.org/release/com/querydsl/querydsl-root/4.2.1/querydsl-root-4.2.1.pom, status\: 403 Forbidden
+@default-backup-repository-http\://repo2.maven.org/maven2/.lastUpdated=1633008622085

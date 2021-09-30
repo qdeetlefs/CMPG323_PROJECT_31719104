@@ -1,0 +1,9 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Sep 30 15:37:43 SAST 2021
+https\://repo.maven.apache.org/maven2/.lastUpdated=1633009063585
+@default-spring-plugins-release-https\://repo.spring.io/plugins-release/.lastUpdated=1633009061551
+@default-spring-libs-release-https\://repo.spring.io/libs-release/.lastUpdated=1633009062112
+https\://repo.spring.io/libs-release/.error=Could not transfer artifact org.apache.maven.wagon\:wagon-ssh-common\:jar\:2.12 from/to spring-libs-release (https\://repo.spring.io/libs-release)\: authentication failed for https\://repo.spring.io/libs-release/org/apache/maven/wagon/wagon-ssh-common/2.12/wagon-ssh-common-2.12.jar, status\: 401 Unauthorized
+@default-spring-libs-milestone-https\://repo.spring.io/libs-milestone/.lastUpdated=1633009061831
+https\://repo.spring.io/plugins-release/.error=Could not transfer artifact org.apache.maven.wagon\:wagon-ssh-common\:jar\:2.12 from/to spring-plugins-release (https\://repo.spring.io/plugins-release)\: authentication failed for https\://repo.spring.io/plugins-release/org/apache/maven/wagon/wagon-ssh-common/2.12/wagon-ssh-common-2.12.jar, status\: 401 Unauthorized
+https\://repo.spring.io/libs-milestone/.error=Could not transfer artifact org.apache.maven.wagon\:wagon-ssh-common\:jar\:2.12 from/to spring-libs-milestone (https\://repo.spring.io/libs-milestone)\: authentication failed for https\://repo.spring.io/libs-milestone/org/apache/maven/wagon/wagon-ssh-common/2.12/wagon-ssh-common-2.12.jar, status\: 401 Unauthorized

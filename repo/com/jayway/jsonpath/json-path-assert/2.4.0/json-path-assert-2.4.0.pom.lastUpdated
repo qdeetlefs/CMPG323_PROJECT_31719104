@@ -1,0 +1,7 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Sep 30 15:30:18 SAST 2021
+https\://oss.sonatype.org/content/repositories/snapshots/.lastUpdated=1633008617265
+http\://repo2.maven.org/maven2/.error=Could not transfer artifact com.jayway.jsonpath\:json-path-assert\:pom\:2.4.0 from/to backup-repository (http\://repo2.maven.org/maven2/)\: transfer failed for http\://repo2.maven.org/maven2/com/jayway/jsonpath/json-path-assert/2.4.0/json-path-assert-2.4.0.pom
+https\://oss.sonatype.org/content/repositories/snapshots/.error=
+https\://oss.sonatype.org/content/repositories/releases/.lastUpdated=1633008618505
+@default-backup-repository-http\://repo2.maven.org/maven2/.lastUpdated=1633008617050

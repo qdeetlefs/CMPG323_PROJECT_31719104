@@ -26,7 +26,7 @@ public class ModifyAccountTransactionFlowImpl implements ModifyAccountTransactio
             newTransactionDate = LocalDate.now();
         }
         accountTransactionTranslator.addMiles(memberId, milesToAdd,newTransactionDate);
-        return new AccountTransactionDto(); //ADD RETURN ARGUMENTS
+        return null; //ADD RETURN ARGUMENTS
     }
 
     @Override
@@ -35,6 +35,6 @@ public class ModifyAccountTransactionFlowImpl implements ModifyAccountTransactio
             newTransactionDate = LocalDate.now();
         }
         accountTransactionTranslator.subtractMiles(memberId, milesToSubtract,newTransactionDate);
-        return new AccountTransactionDto(); //ADD RETURN ARGUMENTS
+        return null; //ADD RETURN ARGUMENTS
     }
 }

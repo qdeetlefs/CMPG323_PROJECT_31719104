@@ -65,7 +65,7 @@ public class AccountTypeControllerTest {
         mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
     }
 
-    @Ignore
+
     @Test
     public void getAll() throws Exception {
 
@@ -90,7 +90,7 @@ public class AccountTypeControllerTest {
         assertEquals(expectedResponse, mvcResult.getResponse().getContentAsString());
     }
 
-    @Ignore
+
     @Test
     public void create() throws Exception {
 
@@ -115,7 +115,7 @@ public class AccountTypeControllerTest {
         assertEquals(expectedResponse, mvcResult.getResponse().getContentAsString());
     }
 
-    @Ignore
+
     @Test
     public void deleteAccountType() throws Exception {
 
@@ -137,7 +137,7 @@ public class AccountTypeControllerTest {
         assertEquals(expectedResponse, mvcResult.getResponse().getContentAsString());
     }
 
-    @Ignore
+
     @Test
     public void updateAccountType() throws Exception {
 
@@ -162,7 +162,7 @@ public class AccountTypeControllerTest {
         assertEquals(expectedResponse, mvcResult.getResponse().getContentAsString());
     }
 
-    @Ignore
+
     @Test
     public void updateAccountTypeWithNoOptionalDate() throws Exception {
 
@@ -186,7 +186,7 @@ public class AccountTypeControllerTest {
         assertEquals(expectedResponse, mvcResult.getResponse().getContentAsString());
     }
 
-    @Ignore
+
     @Test
     public void updateAccountTypeObitMandatory() throws Exception {
 
