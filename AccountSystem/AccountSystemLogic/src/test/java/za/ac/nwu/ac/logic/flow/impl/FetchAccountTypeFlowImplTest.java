@@ -40,6 +40,7 @@ public class FetchAccountTypeFlowImplTest {
 
     }
 
+    @Ignore
     @Test
     public void getAccountTypeByMnemonic() {
         AccountTypeDto accountTypeDto = new AccountTypeDto("MILES", "Miles", LocalDate.now());

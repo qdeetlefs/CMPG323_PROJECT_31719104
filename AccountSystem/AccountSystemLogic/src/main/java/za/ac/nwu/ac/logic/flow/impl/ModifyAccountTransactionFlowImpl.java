@@ -48,6 +48,11 @@ public class ModifyAccountTransactionFlowImpl implements ModifyAccountTransactio
         if (null == newTransactionDate) {
             newTransactionDate = LocalDate.now();
         }
+
+        if(accountTransactionTranslator.getAccountTransactionByMemberId(memberId).getAmount() < milesToSubtract){
+            milesToSubtract = accountTransactionTranslator.getAccountTransactionByMemberId(memberId).getAmount();
+        }
+
         accountTransactionTranslator.subtractMiles(memberId, milesToSubtract,newTransactionDate);
         return null; //ADD RETURN ARGUMENTS
     }
@@ -67,6 +72,11 @@ public class ModifyAccountTransactionFlowImpl implements ModifyAccountTransactio
         if (null == newTransactionDate) {
             newTransactionDate = LocalDate.now();
         }
+
+        if(accountTransactionTranslator.getAccountTransactionByMemberId(memberId).getAmount() < pointsToSubtract){
+            pointsToSubtract = accountTransactionTranslator.getAccountTransactionByMemberId(memberId).getAmount();
+        }
+
         accountTransactionTranslator.subtractPoints(memberId, pointsToSubtract,newTransactionDate);
         return null;
     }

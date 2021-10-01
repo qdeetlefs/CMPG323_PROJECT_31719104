@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AccountTransaction.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">AccountSystemDomain</a> &gt; <a href="index.source.html" class="el_package">za.ac.nwu.ac.domain.persistence</a> &gt; <span class="el_source">AccountTransaction.java</span></div><h1>AccountTransaction.java</h1><pre class="source lang-java linenums">package za.ac.nwu.ac.domain.persistence;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import za.ac.nwu.ac.domain.dto.AccountTypeDto;
+
+import javax.persistence.*;
+import java.io.Serializable;
+import java.time.LocalDate;
+import java.util.Objects;
+
+@Entity
+@Table(name = &quot;account_tx&quot;, schema = &quot;cmpg323_accountsystem&quot;)
+public class AccountTransaction implements Serializable {
+
+<span class="nc" id="L16">    private static final Logger LOGGER = LoggerFactory.getLogger(AccountTransaction.class);</span>
+
+    private static final long serialVersionUID = -4136429093512788169L;
+
+    private long transactionId;
+    private AccountType accountType;
+    private long memberId;
+    private long amount;
+    private LocalDate transactionDate;
+
+<span class="nc" id="L26">    public AccountTransaction() {</span>
+<span class="nc" id="L27">    }</span>
+
+<span class="nc" id="L29">    public AccountTransaction(long transactionId, AccountType accountType, long memberId, long amount, LocalDate transactionDate) {</span>
+<span class="nc" id="L30">        this.transactionId = transactionId;</span>
+<span class="nc" id="L31">        this.accountType = accountType;</span>
+<span class="nc" id="L32">        this.memberId = memberId;</span>
+<span class="nc" id="L33">        this.amount = amount;</span>
+<span class="nc" id="L34">        this.transactionDate = transactionDate;</span>
+<span class="nc" id="L35">    }</span>
+
+
+//    @SequenceGenerator(name = &quot;CMPG323_ACCOUNTSYSTEM_GENERIC_SEQ&quot;, sequenceName = &quot;cmpg323_accountsystem.CMPG323_ACCOUNTSYSTEM_GENERIC_SEQ&quot;, allocationSize = 1)
+//    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = &quot;CMPG323_ACCOUNTSYSTEM_GENERIC_SEQ&quot;)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY )
+    @Column(name = &quot;tx_id&quot;)
+    public long getTransactionId() {
+        return transactionId;
+    }
+
+    @Column(name = &quot;member_id&quot;)
+    public long getMemberId() {
+<span class="nc" id="L49">        return memberId;</span>
+    }
+
+    @Column(name = &quot;amount&quot;)
+    public long getAmount() {
+<span class="nc" id="L54">        return amount;</span>
+    }
+
+    @Column(name = &quot;tx_date&quot;)
+    public LocalDate getTransactionDate() {
+<span class="nc" id="L59">        return transactionDate;</span>
+    }
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = &quot;account_type_id&quot;)
+    public AccountType getAccountType() {
+<span class="nc" id="L65">        return accountType;</span>
+    }
+    
+    public void setTransactionId(long transactionId) {
+<span class="nc" id="L69">        this.transactionId = transactionId;</span>
+<span class="nc" id="L70">    }</span>
+
+    public void setMemberId(long memberId) {
+<span class="nc" id="L73">        this.memberId = memberId;</span>
+<span class="nc" id="L74">    }</span>
+
+    public void setAmount(long amount) {
+<span class="nc" id="L77">        this.amount = amount;</span>
+<span class="nc" id="L78">    }</span>
+
+    public void setTransactionDate(LocalDate transactionDate) {
+<span class="nc" id="L81">        this.transactionDate = transactionDate;</span>
+<span class="nc" id="L82">    }</span>
+
+    public void setAccountType(AccountType AccountType) {
+<span class="nc" id="L85">        this.accountType = AccountType;</span>
+<span class="nc" id="L86">    }</span>
+
+    @Override
+    public boolean equals(Object o) {
+<span class="nc bnc" id="L90" title="All 2 branches missed.">        if (this == o) return true;</span>
+<span class="nc bnc" id="L91" title="All 4 branches missed.">        if (o == null || getClass() != o.getClass()) return false;</span>
+<span class="nc" id="L92">        AccountTransaction that = (AccountTransaction) o;</span>
+<span class="nc bnc" id="L93" title="All 10 branches missed.">        return transactionId == that.transactionId &amp;&amp; memberId == that.memberId &amp;&amp; amount == that.amount &amp;&amp; Objects.equals(accountType, that.accountType) &amp;&amp; Objects.equals(transactionDate, that.transactionDate);</span>
+    }
+
+    @Override
+    public int hashCode() {
+<span class="nc" id="L98">        return Objects.hash(transactionId, accountType, memberId, amount, transactionDate);</span>
+    }
+
+    @Override
+    public String toString() {
+<span class="nc" id="L103">        return &quot;AccountTransaction{&quot; +</span>
+                &quot;transactionId=&quot; + transactionId +
+                &quot;, accountType=&quot; + accountType +
+                &quot;, memberId=&quot; + memberId +
+                &quot;, amount=&quot; + amount +
+                &quot;, transactionDate=&quot; + transactionDate +
+                '}';
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span></div></body></html>

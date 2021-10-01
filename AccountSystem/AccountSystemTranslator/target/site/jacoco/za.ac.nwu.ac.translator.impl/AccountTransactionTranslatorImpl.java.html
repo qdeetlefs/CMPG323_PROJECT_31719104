@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AccountTransactionTranslatorImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">AccountSystemTranslator</a> &gt; <a href="index.source.html" class="el_package">za.ac.nwu.ac.translator.impl</a> &gt; <span class="el_source">AccountTransactionTranslatorImpl.java</span></div><h1>AccountTransactionTranslatorImpl.java</h1><pre class="source lang-java linenums">package za.ac.nwu.ac.translator.impl;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
+import za.ac.nwu.ac.domain.persistence.AccountTransaction;
+import za.ac.nwu.ac.repo.persistence.AccountTransactionRepository;
+import za.ac.nwu.ac.translator.AccountTransactionTranslator;
+import za.ac.nwu.ac.translator.config.TranslatorConfig;
+
+import java.time.LocalDate;
+
+@Component
+public class AccountTransactionTranslatorImpl implements AccountTransactionTranslator {
+
+<span class="nc" id="L16">    private static final Logger LOGGER = LoggerFactory.getLogger(AccountTransactionTranslatorImpl.class);</span>
+
+    private AccountTransactionRepository repo;
+
+<span class="nc" id="L20">    public AccountTransactionTranslatorImpl(AccountTransactionRepository accountTransactionRepository) {</span>
+<span class="nc" id="L21">        this.repo = accountTransactionRepository;</span>
+<span class="nc" id="L22">    }</span>
+
+    @Override
+    public AccountTransaction save(AccountTransaction accountTransaction) {
+        try {
+<span class="nc" id="L27">            return repo.save(accountTransaction);</span>
+<span class="nc" id="L28">        } catch (Exception e) {</span>
+<span class="nc" id="L29">            throw new RuntimeException(&quot;Unable to save to the DB&quot;, e);</span>
+        }
+    }
+
+    @Override
+    public AccountTransaction getAccountTransactionByPk(Long transactionId) {
+        try {
+<span class="nc" id="L36">            return repo.findById(transactionId).orElse(null);</span>
+<span class="nc" id="L37">        } catch (Exception e) {</span>
+<span class="nc" id="L38">            throw new RuntimeException(&quot;Unable to read from the DB&quot;, e);</span>
+        }
+    }
+
+    @Override
+    public AccountTransaction getAccountTransactionByMemberId(Long memberId) {
+        try {
+<span class="nc" id="L45">            return repo.findByMemberId(memberId);</span>
+<span class="nc" id="L46">        } catch (Exception e) {</span>
+<span class="nc" id="L47">            throw new RuntimeException(&quot;Unable to read from the DB&quot;, e);</span>
+        }
+    }
+
+    @Override
+    public void addMiles(Long memberId, Long milesToAdd, LocalDate newTransactionDate) {
+        try {
+<span class="nc" id="L54">            repo.addMiles(memberId, milesToAdd, newTransactionDate);</span>
+<span class="nc" id="L55">        } catch (Exception e) {</span>
+<span class="nc" id="L56">            throw new RuntimeException(&quot;Unable to modify the DB&quot;, e);</span>
+<span class="nc" id="L57">        }</span>
+<span class="nc" id="L58">    }</span>
+
+    @Override
+    public void subtractMiles(Long memberId, Long milesToSubtract, LocalDate newTransactionDate) {
+        try {
+<span class="nc" id="L63">            repo.subtractMiles(memberId, milesToSubtract, newTransactionDate);</span>
+<span class="nc" id="L64">        } catch (Exception e) {</span>
+<span class="nc" id="L65">            throw new RuntimeException(&quot;Unable to modify the DB&quot;, e);</span>
+<span class="nc" id="L66">        }</span>
+<span class="nc" id="L67">    }</span>
+
+    @Override
+    public void addPoints(Long memberId, Long pointsToAdd, LocalDate newTransactionDate) {
+        try {
+<span class="nc" id="L72">            repo.addPoints(memberId, pointsToAdd, newTransactionDate);</span>
+<span class="nc" id="L73">        } catch (Exception e) {</span>
+<span class="nc" id="L74">            throw new RuntimeException(&quot;Unable to modify the DB&quot;, e);</span>
+<span class="nc" id="L75">        }</span>
+<span class="nc" id="L76">    }</span>
+
+    @Override
+    public void subtractPoints(Long memberId, Long pointsToSubtract, LocalDate newTransactionDate) {
+        try {
+<span class="nc" id="L81">            repo.subtractPoints(memberId, pointsToSubtract, newTransactionDate);</span>
+<span class="nc" id="L82">        } catch (Exception e) {</span>
+<span class="nc" id="L83">            throw new RuntimeException(&quot;Unable to modify the DB&quot;, e);</span>
+<span class="nc" id="L84">        }</span>
+<span class="nc" id="L85">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span></div></body></html>

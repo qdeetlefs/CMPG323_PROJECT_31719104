@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AccountTypeTranslatorImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">AccountSystemTranslator</a> &gt; <a href="index.source.html" class="el_package">za.ac.nwu.ac.translator.impl</a> &gt; <span class="el_source">AccountTypeTranslatorImpl.java</span></div><h1>AccountTypeTranslatorImpl.java</h1><pre class="source lang-java linenums">package za.ac.nwu.ac.translator.impl;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import za.ac.nwu.ac.domain.dto.AccountTypeDto;
+import za.ac.nwu.ac.domain.persistence.AccountType;
+import za.ac.nwu.ac.repo.persistence.AccountTypeRepository;
+import za.ac.nwu.ac.translator.AccountTypeTranslator;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+@Component
+public class AccountTypeTranslatorImpl implements AccountTypeTranslator {
+
+
+<span class="nc" id="L20">    private static final Logger LOGGER = LoggerFactory.getLogger(AccountTypeTranslatorImpl.class);</span>
+
+    private final AccountTypeRepository accountTypeRepository;
+
+    @Autowired
+<span class="nc" id="L25">    public AccountTypeTranslatorImpl(@SuppressWarnings(&quot;SpringJavaInjectionPointsAutowiringInspection&quot;) AccountTypeRepository accountTypeRepository) {</span>
+<span class="nc" id="L26">        this.accountTypeRepository = accountTypeRepository;</span>
+<span class="nc" id="L27">    }</span>
+
+    @Override
+    public List&lt;AccountTypeDto&gt; getAllAccountTypes() {
+
+<span class="nc" id="L32">        List&lt;AccountTypeDto&gt; accountTypeDtos = new ArrayList&lt;&gt;();</span>
+        try {
+<span class="nc bnc" id="L34" title="All 2 branches missed.">            for (AccountType accountType : accountTypeRepository.findAll()) {</span>
+<span class="nc" id="L35">                accountTypeDtos.add(new AccountTypeDto(accountType));</span>
+<span class="nc" id="L36">            }</span>
+<span class="nc" id="L37">        } catch (Exception e) {</span>
+            // TODO: Log
+<span class="nc" id="L39">            throw new RuntimeException(&quot;Unable to read from the DB&quot;, e);</span>
+<span class="nc" id="L40">        }</span>
+
+<span class="nc" id="L42">        return accountTypeDtos;</span>
+
+    }
+
+    @Override
+    public AccountTypeDto create(AccountTypeDto accountTypeDto) {
+        try {
+<span class="nc" id="L49">            AccountType accountType = accountTypeRepository.save((accountTypeDto.getAccountType()));</span>
+<span class="nc" id="L50">            return new AccountTypeDto(accountType);</span>
+<span class="nc" id="L51">        } catch (Exception e) {</span>
+<span class="nc" id="L52">            throw new RuntimeException(&quot;Unable to save to the DB&quot;, e);</span>
+        }
+    }
+
+    @Override
+    public AccountTypeDto getAccountTypeByMnemonic(String mnemonic) {
+        try {
+<span class="nc" id="L59">            AccountType accountType = accountTypeRepository.getAccountTypeByMnemonic(mnemonic);</span>
+<span class="nc" id="L60">            return new AccountTypeDto(accountType);</span>
+<span class="nc" id="L61">        } catch (Exception e)</span>
+        {
+<span class="nc" id="L63">            throw new RuntimeException(&quot;Unable to read from the database&quot;,e);</span>
+        }
+    }
+
+    @Override
+    public void deleteAccountType(String mnemonic) {
+        try {
+<span class="nc" id="L70">            accountTypeRepository.deleteAccountType(mnemonic);</span>
+<span class="nc" id="L71">        } catch (Exception e)</span>
+        {
+<span class="nc" id="L73">            throw new RuntimeException(&quot;Unable to delete from the database&quot;,e);</span>
+<span class="nc" id="L74">        }</span>
+<span class="nc" id="L75">    }</span>
+
+    @Override
+    public void updateAccountType(String mnemonic, String newAccountType_name, LocalDate newCreationDate) {
+        try {
+<span class="nc" id="L80">            accountTypeRepository.updateAccountType(mnemonic, newAccountType_name, newCreationDate);</span>
+<span class="nc" id="L81">        } catch (Exception e)</span>
+        {
+<span class="nc" id="L83">            throw new RuntimeException(&quot;Unable to update row from the database&quot;,e);</span>
+<span class="nc" id="L84">        }</span>
+<span class="nc" id="L85">    }</span>
+
+    @Override
+    public AccountType getAccountTypeDbEntityByMnemonic(String accountTypeMnemonic) {
+        try {
+<span class="nc" id="L90">            return accountTypeRepository.getAccountTypeDbEntityByMnemonic(accountTypeMnemonic);</span>
+<span class="nc" id="L91">        } catch (Exception e)</span>
+        {
+<span class="nc" id="L93">            throw new RuntimeException(&quot;Unable to read from the database&quot;,e);</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span></div></body></html>
